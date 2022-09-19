@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.131" />
+        <entry key="app/src/main/res/drawable/shape_ring_proggres.xml" value="0.131" />
+        <entry key="app/src/main/res/drawable/shape_search_bg.xml" value="0.131" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_bank_branch_detail.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_bank_branches.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/include_search_view.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/row_bank_branches.xml" value="0.25" />
       </map>
     </option>
   </component>

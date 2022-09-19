@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/bankBranchesFragment">
+
+    <fragment
+        android:id="@+id/bankBranchesFragment"
+        android:name="com.example.enqurachallenge.ui.bankbranchlist.BankBranchesFragment"
+        android:label="Bank Branches"
+        tools:layout="@layout/fragment_bank_branches">
+
+        <action
+            android:id="@+id/action_bankBranchesFragment_to_bankBranchDetail"
+            app:destination="@id/bankBranchDetail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/bankBranchDetail"
+        android:name="com.example.enqurachallenge.ui.bankbranchlistdetail.BankBranchDetailFragment"
+        android:label="Bank Branch Detail"
+        tools:layout="@layout/fragment_bank_branch_detail">
+
+        <argument
+            android:name="bankBranchId"
+            app:argType="integer" />
+
+
+    </fragment>
+
+</navigation>

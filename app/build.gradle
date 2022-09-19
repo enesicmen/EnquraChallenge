@@ -17,7 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "API_BASE_URL", '"test"'
+        buildConfigField "String", "API_BASE_URL", '"https://raw.githubusercontent.com/fatiha380/mockjson/main/"'
 
     }
 
