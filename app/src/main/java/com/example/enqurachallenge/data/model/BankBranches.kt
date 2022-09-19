@@ -11,41 +11,39 @@ data class BankBranches (
     val id: Int,
 
     @SerializedName("dc_SEHIR")
-    val city: String,
+    val city: String ?= null,
 
     @SerializedName("dc_ILCE")
-    val district: String,
+    val district: String?= null,
 
     @SerializedName("dc_ADRES_ADI")
-    val addressName: String,
+    val addressName: String ?= null,
 
     @SerializedName("dc_ADRES")
-    val address: String,
+    val address: String ?= null,
 
     @SerializedName("dc_BANKA_SUBE")
-    val bankBranch: String,
-
+    val bankBranch: String ?= null,
 
     @SerializedName("dc_BANKA_TIPI")
-    val bankType: String,
+    val bankType: String ?= null,
 
     @SerializedName("dc_BANKA_KODU")
-    val bankCode: String,
-
+    val bankCode: String ?= null,
 
     @SerializedName("dc_POSTA_KODU")
-    val postCode: String,
+    val postCode: String ?= null,
 
     @SerializedName("dc_ON_OFF_LINE")
-    val onOffLine: String,
+    val onOffLine: String ?= null,
 
     @SerializedName("dc_ON_OFF_SITE")
-    val onOffSite: String,
+    val onOffSite: String ?= null,
 
     @SerializedName("dc_BOLGE_KOORDINATORLUGU")
-    val regionalCoordinator: String,
+    val regionalCoordinator: String ?= null,
 
     @SerializedName("dc_EN_YAKIM_ATM")
-    val nearestAtm: String,
+    val nearestAtm: String ?= null,
 
 ): Parcelable

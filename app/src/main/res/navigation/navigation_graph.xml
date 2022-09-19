@@ -10,7 +10,7 @@
     <fragment
         android:id="@+id/bankBranchesFragment"
         android:name="com.example.enqurachallenge.ui.bankbranchlist.BankBranchesFragment"
-        android:label="Bank Branches"
+        android:label="BankBranches"
         tools:layout="@layout/fragment_bank_branches">
 
         <action
@@ -22,10 +22,10 @@
     <fragment
         android:id="@+id/bankBranchDetail"
         android:name="com.example.enqurachallenge.ui.bankbranchlistdetail.BankBranchDetailFragment"
-        android:label="Bank Branch Detail"
+        android:label="BankBranchDetail"
         tools:layout="@layout/fragment_bank_branch_detail">
 
-        <argument
+          <argument
             android:name="bankBranchesModel"
             app:argType="com.example.enqurachallenge.data.model.BankBranches" />
 
