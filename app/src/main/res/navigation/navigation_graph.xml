@@ -26,9 +26,8 @@
         tools:layout="@layout/fragment_bank_branch_detail">
 
         <argument
-            android:name="bankBranchId"
-            app:argType="integer" />
-
+            android:name="bankBranchesModel"
+            app:argType="com.example.enqurachallenge.data.model.BankBranches" />
 
     </fragment>
 

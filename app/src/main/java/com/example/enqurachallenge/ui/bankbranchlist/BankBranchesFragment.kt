@@ -21,7 +21,6 @@ class BankBranchesFragment:
 
     private var mFilteredList: MutableList<BankBranches> = mutableListOf()
 
-    var filterText = ""
     override fun setViewModelClass() = BankBranchesViewModel::class.java
 
     override fun setViewBinding(): FragmentBankBranchesBinding =
@@ -37,6 +36,7 @@ class BankBranchesFragment:
                 is Resource.Success -> {
                     getViewBinding()?.progressBar?.setVisibility(isVisible = false)
                     setBankBranchList(it.data!!)
+
                     getViewBinding()?.llSearchView.setVisibility(isVisible = true)
                 }
                 is Resource.Error -> getViewBinding()?.progressBar?.setVisibility(isVisible = false)
@@ -54,7 +54,7 @@ class BankBranchesFragment:
         mBankBranchesAdapter = BankBranchesAdapter(
             mBankBranchList = mFilteredList,
             onClicked = {
-                val actionDetail = BankBranchesFragmentDirections.actionBankBranchesFragmentToBankBranchDetail(bankBranchId = mFilteredList[it].id)
+                val actionDetail = BankBranchesFragmentDirections.actionBankBranchesFragmentToBankBranchDetail(bankBranchesModel = mFilteredList[it])
                 findNavController().navigate(actionDetail)
             }
         )
@@ -64,13 +64,13 @@ class BankBranchesFragment:
     private fun setBankBranchList(bankBranches: List<BankBranches>) {
         mBankBranchList.clear()
         mBankBranchList.addAll(bankBranches)
+        mFilteredList.addAll(mBankBranchList)
         mBankBranchesAdapter.notifyDataSetChanged()
     }
 
-    private fun filteredList() {
+    private fun filterList(text: String) {
         mFilteredList.clear()
-        var filteredList = mBankBranchList.filter { it.city.contains(filterText) ?: false }
-        mFilteredList.addAll(filteredList)
+        mFilteredList.addAll(mBankBranchList.filter { it.city.contains(text) })
         mBankBranchesAdapter.notifyDataSetChanged()
     }
 
@@ -84,8 +84,7 @@ class BankBranchesFragment:
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                filterText = p0.toString()
-                filteredList()
+                filterList(p0.toString())
             }
 
         })
