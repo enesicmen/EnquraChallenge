@@ -1,6 +1,6 @@
 package com.example.enqurachallenge.data
 
-interface NetworkCallback <T> {
+interface DataCallback <T> {
     fun onSuccess(data: T)
     fun onError(message: String)
 }

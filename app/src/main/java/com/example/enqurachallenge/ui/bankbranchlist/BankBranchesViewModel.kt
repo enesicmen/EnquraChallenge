@@ -1,7 +1,7 @@
 package com.example.enqurachallenge.ui.bankbranchlist
 
 import androidx.lifecycle.ViewModel
-import com.example.enqurachallenge.data.NetworkCallback
+import com.example.enqurachallenge.data.DataCallback
 import com.example.enqurachallenge.data.Resource
 import com.example.enqurachallenge.data.model.BankBranch
 import com.example.enqurachallenge.data.repository.BankBranchesRepository
@@ -18,7 +18,7 @@ class BankBranchesViewModel @Inject constructor(
 
     fun getBankBranches() {
         bankBranchList.value = Resource.Loading()
-        bankBranchesRepository.getBankBranches(object : NetworkCallback<List<BankBranch>> {
+        bankBranchesRepository.getBankBranchList(object : DataCallback<List<BankBranch>> {
             override fun onSuccess(data: List<BankBranch>) {
                 bankBranchList.value = Resource.Success(data)
             }

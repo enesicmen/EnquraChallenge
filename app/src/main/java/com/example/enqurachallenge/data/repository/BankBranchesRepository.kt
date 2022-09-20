@@ -1,35 +1,18 @@
 package com.example.enqurachallenge.data.repository
 
-import com.example.enqurachallenge.data.NetworkCallback
-import com.example.enqurachallenge.data.api.ApiService
+import com.example.enqurachallenge.data.DataCallback
 import com.example.enqurachallenge.data.model.BankBranch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.enqurachallenge.data.source.BankBranchDataSource
+import com.example.enqurachallenge.di.qualifier.BankBranchDataSourceLocal
+import com.example.enqurachallenge.di.qualifier.BankBranchDataSourceRemote
+
 import javax.inject.Inject
 
 class BankBranchesRepository @Inject constructor(
-    private val apiService: ApiService
+    @BankBranchDataSourceLocal private var bankBranchLocalDataSource: BankBranchDataSource,
+    @BankBranchDataSourceRemote private var bankBranchRemoteDataSource: BankBranchDataSource
 ) {
-    fun getBankBranches(callback: NetworkCallback<List<BankBranch>>) {
-
-        val call: Call<List<BankBranch>> = apiService.getBankBranches()
-        call.enqueue(object : Callback<List<BankBranch>> {
-            override fun onResponse(
-                call: Call<List<BankBranch>>,
-                response: Response<List<BankBranch>>
-            ) {
-                if (response.isSuccessful) {
-                    val bankBranchesApiResponse = response.body()!!
-                    callback.onSuccess(data = bankBranchesApiResponse)
-                } else {
-                    callback.onError(message = response.message())
-                }
-            }
-
-            override fun onFailure(call: Call<List<BankBranch>>, t: Throwable) {
-                callback.onError(message = t.message ?: "")
-            }
-        })
+    fun getBankBranchList(callback: DataCallback<List<BankBranch>>) {
+        bankBranchRemoteDataSource.getBankBranchList(callback)
     }
 }
