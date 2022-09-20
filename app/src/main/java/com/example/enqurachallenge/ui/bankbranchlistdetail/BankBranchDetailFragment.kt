@@ -7,6 +7,8 @@ import android.view.View
 import com.example.enqurachallenge.data.model.BankBranch
 import com.example.enqurachallenge.databinding.FragmentBankBranchDetailBinding
 import com.example.enqurachallenge.ui.common.BaseFragment
+import com.example.enqurachallenge.util.AnalyticsUtils
+import com.google.firebase.analytics.FirebaseAnalytics
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,6 +16,7 @@ class BankBranchDetailFragment:
     BaseFragment<FragmentBankBranchDetailBinding, BankBranchDetailViewModel>(){
 
     private lateinit var mBankBranch: BankBranch
+
 
     override fun setViewModelClass() = BankBranchDetailViewModel::class.java
 
@@ -33,6 +36,7 @@ class BankBranchDetailFragment:
         arguments?.let {
             val safeArgs = BankBranchDetailFragmentArgs.fromBundle(it)
             mBankBranch = safeArgs.bankBranchesModel
+            AnalyticsUtils.logScreenView(mBankBranch.bankCode ?: "")
         }
     }
 

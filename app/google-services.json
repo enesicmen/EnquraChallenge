@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "238073165926",
+    "project_id": "enqurachallenge",
+    "storage_bucket": "enqurachallenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238073165926:android:b8faa28811fa37a347d5a7",
+        "android_client_info": {
+          "package_name": "com.example.enqurachallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238073165926-1c26c6r1hc0t99s5l11nfvm7osivfmi0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enqurachallenge",
+            "certificate_hash": "5f4035a1015e9dbf408b73150ab5da754bfa7bd0"
+          }
+        },
+        {
+          "client_id": "238073165926-3emlb63gdat5q6o0i6ie0j5gljm8ahjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLWaHFgi2L-snTAcYpQLfnVil7gJ73T9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238073165926-3emlb63gdat5q6o0i6ie0j5gljm8ahjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

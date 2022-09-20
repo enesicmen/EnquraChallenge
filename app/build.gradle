@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -76,6 +77,12 @@ dependencies {
 
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.8'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 
     //Testing
     testImplementation 'junit:junit:4.13.2'
