@@ -4,7 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import com.example.enqurachallenge.data.model.BankBranches
+import com.example.enqurachallenge.data.model.BankBranch
 import com.example.enqurachallenge.databinding.FragmentBankBranchDetailBinding
 import com.example.enqurachallenge.ui.common.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class BankBranchDetailFragment:
     BaseFragment<FragmentBankBranchDetailBinding, BankBranchDetailViewModel>(){
 
-    private lateinit var mBankBranch: BankBranches
+    private lateinit var mBankBranch: BankBranch
 
     override fun setViewModelClass() = BankBranchDetailViewModel::class.java
 
@@ -40,11 +40,7 @@ class BankBranchDetailFragment:
         getViewBinding()?.apply {
             tvBankType.text = mBankBranch.bankType
             tvBankCode.text = mBankBranch.bankCode
-            tvBankBranch.text = mBankBranch.bankBranch
-            tvPostCode.text = mBankBranch.postCode
-            tvOnOffLine.text = mBankBranch.onOffLine
-            tvOnOffSite.text = mBankBranch.onOffSite
-            tvRegionalCoordinator.text = mBankBranch.regionalCoordinator
+            tvAddress.text = mBankBranch.address
             tvNearestAtm.text = mBankBranch.nearestAtm
 
             btnDirection.setOnClickListener(View.OnClickListener {

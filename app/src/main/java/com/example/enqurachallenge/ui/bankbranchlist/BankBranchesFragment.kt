@@ -6,7 +6,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import com.example.enqurachallenge.R
 import com.example.enqurachallenge.data.Resource
-import com.example.enqurachallenge.data.model.BankBranches
+import com.example.enqurachallenge.data.model.BankBranch
 import com.example.enqurachallenge.databinding.FragmentBankBranchesBinding
 import com.example.enqurachallenge.ui.common.BaseFragment
 import com.example.enqurachallenge.ui.common.ext.isConnected
@@ -19,9 +19,9 @@ class BankBranchesFragment:
 
     lateinit var mBankBranchesAdapter: BankBranchesAdapter
 
-    private var mBankBranchList: MutableList<BankBranches> = mutableListOf()
+    private var mBankBranchList: MutableList<BankBranch> = mutableListOf()
 
-    private var mFilteredList: MutableList<BankBranches> = mutableListOf()
+    private var mFilteredList: MutableList<BankBranch> = mutableListOf()
 
     override fun setViewModelClass() = BankBranchesViewModel::class.java
 
@@ -85,7 +85,7 @@ class BankBranchesFragment:
         getViewBinding()?.rvBankBranches?.adapter = mBankBranchesAdapter
     }
 
-    private fun setBankBranchList(bankBranches: List<BankBranches>) {
+    private fun setBankBranchList(bankBranches: List<BankBranch>) {
         mBankBranchList.clear()
         mBankBranchList.addAll(bankBranches)
         mFilteredList.addAll(mBankBranchList)

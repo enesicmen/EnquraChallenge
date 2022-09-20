@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class BankBranches (
+data class BankBranch (
 
     @SerializedName("ID")
     val id: Int,
@@ -28,7 +28,7 @@ data class BankBranches (
     @SerializedName("dc_BANKA_TIPI")
     val bankType: String ?= null,
 
-    @SerializedName("dc_BANKA_KODU")
+    @SerializedName("dc_BANK_KODU")
     val bankCode: String ?= null,
 
     @SerializedName("dc_POSTA_KODU")

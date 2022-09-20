@@ -3,12 +3,12 @@ package com.example.enqurachallenge.ui.bankbranchlist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.enqurachallenge.data.model.BankBranches
+import com.example.enqurachallenge.data.model.BankBranch
 import com.example.enqurachallenge.databinding.RowBankBranchesBinding
 import com.example.enqurachallenge.ui.common.RecyclerItemClickListener
 
 class BankBranchesAdapter(
-    private val mBankBranchList: MutableList<BankBranches>,
+    private val mBankBranchList: MutableList<BankBranch>,
     private val onClicked: RecyclerItemClickListener
 ) : RecyclerView.Adapter<BankBranchesAdapter.ViewHolder>() {
 
@@ -32,13 +32,11 @@ class BankBranchesAdapter(
             itemView.setOnClickListener { onClicked(adapterPosition) }
         }
 
-        fun bind(item: BankBranches) {
+        fun bind(item: BankBranch) {
             binding.apply {
                 tvCity.text = item.city
                 tvDistrict.text = item.district
                 tvBankBranch.text = item.bankBranch
-                tvAddressName.text = item.addressName
-                tvAddress.text = item.address
             }
         }
     }

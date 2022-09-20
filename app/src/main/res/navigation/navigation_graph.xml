@@ -27,7 +27,7 @@
 
           <argument
             android:name="bankBranchesModel"
-            app:argType="com.example.enqurachallenge.data.model.BankBranches" />
+            app:argType="com.example.enqurachallenge.data.model.BankBranch" />
 
     </fragment>
 

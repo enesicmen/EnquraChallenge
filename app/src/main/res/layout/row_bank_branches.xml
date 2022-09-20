@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:elevation="@dimen/cw_elevation_10dp"
     app:cardCornerRadius="@dimen/cw_corner_radius_10dp"
+    android:backgroundTint="@color/white"
     android:paddingTop="@dimen/cw_padding_top_5dp"
-    android:backgroundTint="@color/light_blue"
     android:paddingBottom="@dimen/cw_padding_bottom_5dp"
     android:layout_marginStart="@dimen/cw_margin_start_10dp"
     android:layout_marginEnd="@dimen/cw_margin_end_10dp"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tvCity"
+            android:id="@+id/tvBankBranch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -36,6 +36,17 @@
             tools:text="İstanbul" />
 
         <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="@dimen/tv_margin_top_5dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBankBranch"
+            tools:text="Kozan" />
+
+        <TextView
             android:id="@+id/tvDistrict"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,44 +55,8 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCity"
-            tools:text="Kozan" />
-
-        <TextView
-            android:id="@+id/tvBankBranch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="@dimen/tv_margin_top_5dp"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDistrict"
             tools:text="Kozan şubesi adana" />
 
-        <TextView
-            android:id="@+id/tvAddressName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="@dimen/tv_margin_top_5dp"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBankBranch"
-            tools:text="Adnan menderes parkı" />
-
-        <TextView
-            android:id="@+id/tvAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="@dimen/tv_margin_top_5dp"
-            android:layout_marginBottom="6dp"
-            android:maxLines="4"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAddressName"
-            tools:text="lorem ipsum " />
 
         <ImageView
             android:id="@+id/imageView"

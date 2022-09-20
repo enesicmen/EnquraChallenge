@@ -2,7 +2,7 @@ package com.example.enqurachallenge.data.repository
 
 import com.example.enqurachallenge.data.NetworkCallback
 import com.example.enqurachallenge.data.api.ApiService
-import com.example.enqurachallenge.data.model.BankBranches
+import com.example.enqurachallenge.data.model.BankBranch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -11,13 +11,13 @@ import javax.inject.Inject
 class BankBranchesRepository @Inject constructor(
     private val apiService: ApiService
 ) {
-    fun getBankBranches(callback: NetworkCallback<List<BankBranches>>) {
+    fun getBankBranches(callback: NetworkCallback<List<BankBranch>>) {
 
-        val call: Call<List<BankBranches>> = apiService.getBankBranches()
-        call.enqueue(object : Callback<List<BankBranches>> {
+        val call: Call<List<BankBranch>> = apiService.getBankBranches()
+        call.enqueue(object : Callback<List<BankBranch>> {
             override fun onResponse(
-                call: Call<List<BankBranches>>,
-                response: Response<List<BankBranches>>
+                call: Call<List<BankBranch>>,
+                response: Response<List<BankBranch>>
             ) {
                 if (response.isSuccessful) {
                     val bankBranchesApiResponse = response.body()!!
@@ -27,7 +27,7 @@ class BankBranchesRepository @Inject constructor(
                 }
             }
 
-            override fun onFailure(call: Call<List<BankBranches>>, t: Throwable) {
+            override fun onFailure(call: Call<List<BankBranch>>, t: Throwable) {
                 callback.onError(message = t.message ?: "")
             }
         })
