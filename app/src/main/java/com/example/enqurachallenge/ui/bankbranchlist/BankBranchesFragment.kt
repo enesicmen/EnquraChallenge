@@ -42,7 +42,7 @@ class BankBranchesFragment:
                 }
                 is Resource.Error -> {
                     getViewBinding()?.progressBar?.setVisibility(isVisible = false)
-                    showErrorViews(R.drawable.no_network_icon)
+                    showErrorViews(R.drawable.ic_no_network)
                 }
             }
         }
@@ -58,7 +58,7 @@ class BankBranchesFragment:
         if(context?.isConnected == true) {
             getViewModel()?.getBankBranches()
         } else {
-            showErrorViews(R.drawable.no_network_icon)
+            showErrorViews(R.drawable.ic_no_network)
         }
     }
 

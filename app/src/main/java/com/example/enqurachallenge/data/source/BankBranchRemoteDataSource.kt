@@ -1,11 +1,8 @@
 package com.example.enqurachallenge.data.source
 
-import android.content.Context
 import com.example.enqurachallenge.data.DataCallback
 import com.example.enqurachallenge.data.api.ApiService
 import com.example.enqurachallenge.data.model.BankBranch
-import dagger.hilt.android.qualifiers.ApplicationContext
-import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

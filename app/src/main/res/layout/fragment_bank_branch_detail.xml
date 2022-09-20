@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+ <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/cw_elevation_10dp"
-        app:cardCornerRadius="@dimen/cw_corner_radius_10dp"
-        android:paddingTop="@dimen/cw_padding_top_5dp"
-        android:paddingBottom="@dimen/cw_padding_bottom_5dp"
         android:layout_marginStart="@dimen/cw_margin_start_10dp"
         android:layout_marginEnd="@dimen/cw_margin_end_10dp"
-        android:padding="@dimen/cw_padding_16dp"
         android:layout_marginTop="@dimen/cw_margin_top_10dp"
+        android:padding="@dimen/cw_padding_16dp"
+        android:elevation="@dimen/cw_elevation_10dp"
+        app:cardCornerRadius="@dimen/cw_corner_radius_10dp"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/cl_padding_start_3dp"
-            android:paddingTop="@dimen/cl_padding_top_5dp"
-            android:paddingBottom="@dimen/cl_padding_bottom_5dp">
+            android:padding="@dimen/cl_padding_5dp"
+            android:layout_margin="@dimen/cl_margin_8dp">
 
             <TextView
                 android:id="@+id/tvBankType"
@@ -87,10 +84,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnDirection"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
         android:text="@string/directions"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

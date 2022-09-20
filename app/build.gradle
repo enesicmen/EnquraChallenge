@@ -47,6 +47,8 @@ dependencies {
     def retrofit = "2.9.0"
     def okHttp = "4.10.0"
     def room = "2.4.2"
+    def serialization = "2.9.0"
+    def firebaseBom = "30.4.1"
 
     //Android
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -74,13 +76,10 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttp"
 
     // Serialization
-    implementation 'com.google.code.gson:gson:2.9.0'
-
-    // Picasso
-    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation "com.google.code.gson:gson:$serialization"
 
     // Firebase
-    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBom")
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
@@ -89,10 +88,7 @@ dependencies {
     kapt "androidx.room:room-compiler:$room"
     implementation "androidx.room:room-ktx:$room"
 
-    // RxJava
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
-
-
+    
     //Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

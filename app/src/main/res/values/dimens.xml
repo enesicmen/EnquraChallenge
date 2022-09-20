@@ -2,7 +2,6 @@
 <resources>
 
     <!-- CardView Dimens -->
-
     <dimen name="cw_elevation_10dp">10dp</dimen>
     <dimen name="cw_corner_radius_10dp">10dp</dimen>
     <dimen name="cw_padding_top_5dp">5dp</dimen>
@@ -14,14 +13,14 @@
     <dimen name="cw_margin_bottom_10dp">10dp</dimen>
 
     <!-- ConstraintLayout Dimens -->
-
     <dimen name="cl_padding_top_5dp">5dp</dimen>
     <dimen name="cl_padding_start_3dp">3dp</dimen>
     <dimen name="cl_padding_bottom_5dp">5dp</dimen>
     <dimen name="cl_padding_bottom_10dp">10dp</dimen>
+    <dimen name="cl_padding_5dp">5dp</dimen>
+    <dimen name="cl_margin_8dp">8dp</dimen>
 
     <!-- TextView Dimens -->
-
     <dimen name="tv_margin_start_16dp">16dp</dimen>
     <dimen name="tv_margin_start_5dp">5dp</dimen>
     <dimen name="tv_margin_top_5dp">5dp</dimen>
@@ -29,12 +28,10 @@
     <dimen name="tv_margin_end_5dp">5dp</dimen>
 
     <!-- RecyclerView Dimens -->
-
     <dimen name="rw_margin_top_5dp">5dp</dimen>
     <dimen name="rw_margin_start_3dp">3dp</dimen>
 
     <!-- ImageView Dimens -->
-
     <dimen name="iv_margin_top_5dp">5dp</dimen>
     <dimen name="iv_width_64dp">64dp</dimen>
     <dimen name="iv_width_50dp">50dp</dimen>

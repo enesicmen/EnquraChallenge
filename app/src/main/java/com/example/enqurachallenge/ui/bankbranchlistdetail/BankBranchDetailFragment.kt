@@ -1,14 +1,13 @@
 package com.example.enqurachallenge.ui.bankbranchlistdetail
 
-import android.content.Intent
-import android.net.Uri
+
 import android.os.Bundle
 import android.view.View
 import com.example.enqurachallenge.data.model.BankBranch
 import com.example.enqurachallenge.databinding.FragmentBankBranchDetailBinding
 import com.example.enqurachallenge.ui.common.BaseFragment
+import com.example.enqurachallenge.ui.common.ext.openMap
 import com.example.enqurachallenge.util.AnalyticsUtils
-import com.google.firebase.analytics.FirebaseAnalytics
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,7 +16,6 @@ class BankBranchDetailFragment:
 
     private lateinit var mBankBranch: BankBranch
 
-
     override fun setViewModelClass() = BankBranchDetailViewModel::class.java
 
     override fun setViewBinding(): FragmentBankBranchDetailBinding =
@@ -25,10 +23,6 @@ class BankBranchDetailFragment:
 
     override fun initView(savedInstanceState: Bundle?) {
         setData()
-    }
-
-    override fun initLogic() {
-        super.initLogic()
     }
 
     override fun readDataFromArguments() {
@@ -48,17 +42,8 @@ class BankBranchDetailFragment:
             tvNearestAtm.text = mBankBranch.nearestAtm
 
             btnDirection.setOnClickListener(View.OnClickListener {
-                if(mBankBranch.address != null || mBankBranch.address == "") {
-                    val url = "http://maps.google.co.in/maps?q=${mBankBranch.address}"
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                    startActivity(intent)
-                }else {
-
-                }
+                context.openMap(mBankBranch.address)
             })
         }
     }
-
-
-
 }
