@@ -3,10 +3,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/gray_F5"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray_F5">
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/bankBranchGroup"
@@ -86,7 +86,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:minHeight="60dp"
-        android:backgroundTint="@color/red"
         android:layout_margin="16dp"
         android:textAllCaps="false"
         android:text="@string/try_again"

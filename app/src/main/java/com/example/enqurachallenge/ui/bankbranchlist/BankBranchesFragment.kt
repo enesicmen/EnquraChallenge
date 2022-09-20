@@ -1,5 +1,6 @@
 package com.example.enqurachallenge.ui.bankbranchlist
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView
@@ -13,6 +14,7 @@ import com.example.enqurachallenge.ui.common.ext.isConnected
 import com.example.enqurachallenge.ui.common.ext.setVisibility
 import dagger.hilt.android.AndroidEntryPoint
 
+@SuppressLint("NotifyDataSetChanged")
 @AndroidEntryPoint
 class BankBranchesFragment:
     BaseFragment<FragmentBankBranchesBinding, BankBranchesViewModel>(){
@@ -31,7 +33,6 @@ class BankBranchesFragment:
     override fun initView(savedInstanceState: Bundle?) {
         initBankBranchesAdapter()
         initSearchBar()
-        onClickRetryConnection()
         getViewModel()?.bankBranchList?.observe(this){
             when (it) {
                 is Resource.Loading -> getViewBinding()?.progressBar?.setVisibility(isVisible = true)
@@ -46,15 +47,18 @@ class BankBranchesFragment:
                 }
             }
         }
+
+        getViewBinding()?.retryButton?.setOnClickListener(View.OnClickListener {
+            getBankBranches()
+        })
     }
 
     override fun initLogic() {
         super.initLogic()
         getBankBranches()
-        //getViewModel()?.getBankBranches()
     }
 
-    fun getBankBranches() {
+    private fun getBankBranches() {
         if(context?.isConnected == true) {
             getViewModel()?.getBankBranches()
         } else {
@@ -62,16 +66,12 @@ class BankBranchesFragment:
         }
     }
 
-    private fun onClickRetryConnection() {
-        getViewBinding()?.retryButton?.setOnClickListener(View.OnClickListener {
-            getBankBranches()
-        })
-    }
-
-    fun showErrorViews(imageResId: Int) {
-        getViewBinding()?.bankBranchGroup?.setVisibility(isVisible = false)
-        getViewBinding()?.errorGroup?.setVisibility(isVisible = true)
-        getViewBinding()?.errorImageView?.setImageResource(imageResId)
+    private fun showErrorViews(imageResId: Int) {
+        getViewBinding()?.apply {
+            bankBranchGroup.setVisibility(isVisible = false)
+            errorGroup.setVisibility(isVisible = true)
+            errorImageView.setImageResource(imageResId)
+        }
     }
 
     private fun initBankBranchesAdapter() {

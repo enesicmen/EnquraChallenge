@@ -40,7 +40,6 @@ class BankBranchDetailFragment:
             tvBankCode.text = mBankBranch.bankCode
             tvAddress.text = mBankBranch.address
             tvNearestAtm.text = mBankBranch.nearestAtm
-
             btnDirection.setOnClickListener(View.OnClickListener {
                 context.openMap(mBankBranch.address)
             })
