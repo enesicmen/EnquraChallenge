@@ -3,6 +3,7 @@ package com.example.enqurachallenge.data.source
 import com.example.enqurachallenge.data.DataCallback
 import com.example.enqurachallenge.data.api.ApiService
 import com.example.enqurachallenge.data.model.BankBranch
+import com.example.enqurachallenge.di.qualifier.BankBranchDataSourceLocal
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -10,7 +11,8 @@ import javax.inject.Inject
 
 class BankBranchRemoteDataSource
 @Inject constructor(
-    private val apiService: ApiService
+    private val apiService: ApiService,
+    @BankBranchDataSourceLocal private val bankBranchLocalDataSource: BankBranchDataSource
 ): BankBranchDataSource {
 
     override fun getBankBranchList(callback: DataCallback<List<BankBranch>>) {
@@ -22,8 +24,9 @@ class BankBranchRemoteDataSource
                 response: Response<List<BankBranch>>
             ) {
                 if (response.isSuccessful) {
-                    val bankBranchesApiResponse = response.body()!!
-                    callback.onSuccess(data = bankBranchesApiResponse)
+                    val bankBranchList = response.body()!!
+                    bankBranchLocalDataSource.saveBankBranchList(bankBranchList)
+                    callback.onSuccess(data = bankBranchList)
                 } else {
                     callback.onError(message = response.message())
                 }
@@ -34,4 +37,6 @@ class BankBranchRemoteDataSource
             }
         })
     }
+
+    override fun saveBankBranchList(bankBranchList: List<BankBranch>) {}
 }

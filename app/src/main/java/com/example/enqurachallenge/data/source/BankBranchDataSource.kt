@@ -4,5 +4,8 @@ import com.example.enqurachallenge.data.DataCallback
 import com.example.enqurachallenge.data.model.BankBranch
 
 interface BankBranchDataSource {
-    fun getBankBranchList(callback:DataCallback<List<BankBranch>>)
+
+    fun getBankBranchList(callback: DataCallback<List<BankBranch>>)
+
+    fun saveBankBranchList(bankBranchList: List<BankBranch>)
 }

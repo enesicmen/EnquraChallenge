@@ -17,13 +17,13 @@ class BankBranchesViewModel @Inject constructor(
     var bankBranchList: SingleLiveEvent<Resource<List<BankBranch>>> = SingleLiveEvent()
 
     fun getBankBranches() {
-        bankBranchList.value = Resource.Loading()
+        bankBranchList.postValue(Resource.Loading())
         bankBranchesRepository.getBankBranchList(object : DataCallback<List<BankBranch>> {
             override fun onSuccess(data: List<BankBranch>) {
-                bankBranchList.value = Resource.Success(data)
+                bankBranchList.postValue(Resource.Success(data))
             }
             override fun onError(message: String) {
-                bankBranchList.value = Resource.Error(message)
+                bankBranchList.postValue(Resource.Error(message))
             }
 
         })

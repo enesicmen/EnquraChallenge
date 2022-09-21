@@ -3,6 +3,7 @@ package com.example.enqurachallenge.ui.bankbranchlist
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import com.example.enqurachallenge.R
@@ -43,7 +44,7 @@ class BankBranchesFragment:
                 }
                 is Resource.Error -> {
                     getViewBinding()?.progressBar?.setVisibility(isVisible = false)
-                    showErrorViews(R.drawable.ic_no_network)
+                    showErrorViews()
                 }
             }
         }
@@ -56,21 +57,21 @@ class BankBranchesFragment:
     override fun initLogic() {
         super.initLogic()
         getBankBranches()
+
     }
 
     private fun getBankBranches() {
-        if(context?.isConnected == true) {
-            getViewModel()?.getBankBranches()
-        } else {
-            showErrorViews(R.drawable.ic_no_network)
+        if(context?.isConnected == false) {
+            Toast.makeText(context,"No network",Toast.LENGTH_LONG).show()
         }
+        getViewModel()?.getBankBranches()
     }
 
-    private fun showErrorViews(imageResId: Int) {
+    private fun showErrorViews() {
         getViewBinding()?.apply {
             bankBranchGroup.setVisibility(isVisible = false)
             errorGroup.setVisibility(isVisible = true)
-            errorImageView.setImageResource(imageResId)
+            errorImageView.setImageResource(R.drawable.ic_no_data)
         }
     }
 
@@ -94,7 +95,7 @@ class BankBranchesFragment:
             getViewBinding()?.bankBranchGroup?.setVisibility(isVisible = true)
             getViewBinding()?.errorGroup?.setVisibility(isVisible = false)
         } else {
-            showErrorViews(R.drawable.ic_no_data)
+            showErrorViews()
         }
     }
 
