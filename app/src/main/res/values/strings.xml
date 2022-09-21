@@ -5,4 +5,5 @@
     <string name="try_again">Try Again</string>
     <string name="whoops">Whoops!</string>
     <string name="directions">Directions</string>
+    <string name="no_network">No network connection, will try to fetch data from database</string>
 </resources>

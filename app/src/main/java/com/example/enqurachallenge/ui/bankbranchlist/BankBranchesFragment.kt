@@ -62,7 +62,7 @@ class BankBranchesFragment:
 
     private fun getBankBranches() {
         if(context?.isConnected == false) {
-            Toast.makeText(context,"No network",Toast.LENGTH_LONG).show()
+            Toast.makeText(context,R.string.no_network,Toast.LENGTH_LONG).show()
         }
         getViewModel()?.getBankBranches()
     }
