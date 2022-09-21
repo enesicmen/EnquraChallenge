@@ -56,10 +56,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="@dimen/iv_width_and_height_30dp"
-            android:layout_height="@dimen/iv_width_and_height_30dp"
+            android:layout_width="@dimen/iv_width_and_height_15dp"
+            android:layout_height="15dp"
             android:layout_marginEnd="@dimen/iv_margin_end_10dp"
-            android:src="@drawable/right_icon"
+            android:src="@drawable/ic_right_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
