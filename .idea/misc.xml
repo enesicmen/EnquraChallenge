@@ -11,6 +11,8 @@
         <entry key="app/src/main/res/layout/fragment_bank_branches.xml" value="0.25" />
         <entry key="app/src/main/res/layout/include_search_view.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/row_bank_branches.xml" value="0.25" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.134" />
       </map>
     </option>
   </component>
